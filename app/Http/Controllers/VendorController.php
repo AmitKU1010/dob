@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 use App\Manager;
 use App\Vendor;
 use App\User;
+use App\Department;
+use App\Branch;
+
+
 use Illuminate\Support\Facades\Hash;
 use DB;
 
@@ -20,10 +24,11 @@ class VendorController extends Controller
     public function index()
     {
         $vendors = Vendor::all();
+
         $User =  DB::table('users')->where('role_id', '=', 3)->get();
         return view('admin.vendors.index')->with('User',$User);
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +37,11 @@ class VendorController extends Controller
     public function create()
     {
         $vendors = Vendor::all();
-        return view('admin.vendors.create');
+        $Department = Department::all();
+        $Branch = Branch::all();
+
+
+        return view('admin.vendors.create')->with('Department',$Department)->with('Branch',$Branch);
     }
 
     /**
@@ -84,6 +93,11 @@ class VendorController extends Controller
         $User->branch=$request->input('branch');
 
  
+        // $User->department_name_user=$request->input('department_name_user');
+
+        $boi = implode(',', $request->input('department_name_user'));
+
+        $User->department_name_user=$boi;
 
         $aoi = implode(',', $request->input('branch'));
 
@@ -100,6 +114,9 @@ class VendorController extends Controller
         $User->phone_number=$request->input('phone_number');
         $User->address=$request->input('address');
         $User->show_password=$request->input('password');
+
+        $User->strength=$request->input('strength');
+        
 
         $User->doj=$request->input('doj');
 

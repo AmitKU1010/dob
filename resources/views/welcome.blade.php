@@ -71,70 +71,55 @@
 				<div class="section-title center-block text-left">
 					<h3>Recommended Services</h3>
 				</div>
+
 				<div id="myCarousel2" class="owl-carousel owl-carousel-icons2">
 					<!-- Wrapper for carousel items -->
-						@if(count($Product) > 0)
+					
+	                    @if(count($Product) > 0)
                         @foreach($Product as $Products)
 					<div class="item">
-							<div class="card mb-0">
+						<div class="card mb-0">
 							<div class="item-card7-imgs">
-								<a href="single_services.html"></a>
-							<!-- 	<img src="assets/images/products/products/b3.jpg" alt="img" class="cover-image" class="cover-image"> -->
+								<a href="main-pages/single_service.html"></a>
 								<img  class="img-circle" width="617px" height="264px" src="{{ URL::asset('/images/'.$Products->images) }}">
 							</div>
+
 							<div class="item-card7-overlaytext">
-								<a href="single_category.html" class="text-white"> {{$Products->service_name}}</a>
-								<h4  class="mb-0">{{$Products->price}}</h4>
+									<a href="main-pages/single_service.html" class="text-white"> {{$Products->service_name}}</a>
 							</div>
+
 							<div class="card-body">
 								<div class="item-card7-desc">
 									<div class="item-card7-text">
-										<a href="single_services.html" class="text-dark"><h4 class="">{{$Products->service_name}}</h4></a>
+										<a href="main-pages/single_service.html" class="text-dark">
+											<h4 class="">{{$Products->service_name}}</h4>
+										</a>
 									</div>
-									<ul class="item-cards7-ic mb-0">
-										<li>
-											<a href="#">
-												<span class="text-muted">
-													<i class="icon icon-eye mr-1"></i> 
-													22 Hired
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-location-pin text-muted mr-1"></i> {{$Products->availbale}}
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-event text-muted mr-1"></i> 
-												5 hours ago
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-phone text-muted mr-1"></i> 
-												7645 245 153
-											</a>
-										</li>
-									</ul>
 
-									<a href="#" class="btn btn-block btn-primary mb-0 mt-4">Order Now</a>
+									<h4 class="mb-0 mt-3 btn btn-cyan btn-block h4">
+										<del class="h6 text-white ml-2">{{$Products->price}} </del>
+										{{$Products->offer_price}}
+									</h4>
+
+									<div class="product-5-rating text-right mt-1">
+										Rating:
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- <div class="item">
-					</div> -->
-					
-					
+
 					   @endforeach
                        @endif
+
 				</div>
 			</div>
 		</section>
-		<!--/Recomended Services-->
-         
 
 		<!--Web Solution-->
 
@@ -145,252 +130,53 @@
 				<div class="section-title center-block text-left">
 					<h3>{{$Select_department->department_name}}</h3>
 				</div>
+ 
 				<div id="myCarousel2" class="owl-carousel owl-carousel-icons2">
 					<!-- Wrapper for carousel items -->
+
+					    @if(count($Product) > 0)
+                        @foreach($Product as $Products)
 					<div class="item">
 						<div class="card mb-0">
 							<div class="item-card7-imgs">
-								<a href="single_services.html"></a>
-								<img src="assets/images/products/products/b3.jpg" alt="img" class="cover-image">
+								<a href="main-pages/single_service.html"></a>
+								<img  class="img-circle" width="617px" height="264px" src="{{ URL::asset('/images/'.$Products->images) }}">
 							</div>
+
 							<div class="item-card7-overlaytext">
-								<a href="single_category.html" class="text-white"> Beauty & Spa </a>
-								<h4  class="mb-0">₹ 398.99</h4>
+									<a href="main-pages/single_service.html" class="text-white"> {{$Products->service_name}} </a>
 							</div>
+
 							<div class="card-body">
 								<div class="item-card7-desc">
 									<div class="item-card7-text">
-										<a href="single_services.html" class="text-dark"><h4 class="">Sondarya Beauty & Spa</h4></a>
+										<a href="main-pages/single_service.html" class="text-dark">
+											<h4 class=""> {{$Products->service_name}}</h4>
+										</a>
 									</div>
-									<ul class="item-cards7-ic mb-0">
-										<li>
-											<a href="#">
-												<span class="text-muted">
-													<i class="icon icon-eye mr-1"></i> 
-													22 Hired
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-location-pin text-muted mr-1"></i> Kolkata
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-event text-muted mr-1"></i> 
-												5 hours ago
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-phone text-muted mr-1"></i> 
-												7645 245 153
-											</a>
-										</li>
-									</ul>
 
-									<a href="#" class="btn btn-block btn-primary mb-0 mt-4">Order Now</a>
+									<h4 class="mb-0 mt-3 btn btn-cyan btn-block h4">
+										<del class="h6 text-white ml-2"> ₹ 2,139.0 </del>
+										₹ 398.99 
+									</h4>
+
+									<div class="product-5-rating text-right mt-1">
+										Rating:
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+										<a href="#" class=""><i class="fa fa-star text-warning"></i></a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="card mb-0">
-							<div class="item-card7-imgs">
-								<a href="single_services.html"></a>
-								<img src="assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="single_category.html" class="text-white"> Beauty & Spa </a>
-								<h4  class="mb-0">₹ 398.99</h4>
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="single_services.html" class="text-dark"><h4 class="">Sondarya Beauty & Spa</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										<li>
-											<a href="#">
-												<span class="text-muted">
-													<i class="icon icon-eye mr-1"></i> 
-													22 Hired
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-location-pin text-muted mr-1"></i> Kolkata
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-event text-muted mr-1"></i> 
-												5 hours ago
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-phone text-muted mr-1"></i> 
-												7645 245 153
-											</a>
-										</li>
-									</ul>
-
-									<a href="#" class="btn btn-block btn-primary mb-0 mt-4">Order Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-							<div class="item-card7-imgs">
-								<a href="single_services.html"></a>
-								<img src="assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="single_category.html" class="text-white"> Beauty & Spa </a>
-								<h4  class="mb-0">₹ 398.99</h4>
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="single_services.html" class="text-dark"><h4 class="">Sondarya Beauty & Spa</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										<li>
-											<a href="#">
-												<span class="text-muted">
-													<i class="icon icon-eye mr-1"></i> 
-													22 Hired
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-location-pin text-muted mr-1"></i> Kolkata
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-event text-muted mr-1"></i> 
-												5 hours ago
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-phone text-muted mr-1"></i> 
-												7645 245 153
-											</a>
-										</li>
-									</ul>
-
-									<a href="#" class="btn btn-block btn-primary mb-0 mt-4">Order Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-							<div class="item-card7-imgs">
-								<a href="single_services.html"></a>
-								<img src="assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="single_category.html" class="text-white"> Beauty & Spa </a>
-								<h4  class="mb-0">₹ 398.99</h4>
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="single_services.html" class="text-dark"><h4 class="">Sondarya Beauty & Spa</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										<li>
-											<a href="#">
-												<span class="text-muted">
-													<i class="icon icon-eye mr-1"></i> 
-													22 Hired
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-location-pin text-muted mr-1"></i> Kolkata
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-event text-muted mr-1"></i> 
-												5 hours ago
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-phone text-muted mr-1"></i> 
-												7645 245 153
-											</a>
-										</li>
-									</ul>
-
-									<a href="#" class="btn btn-block btn-primary mb-0 mt-4">Order Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="card mb-0">
-							<div class="item-card7-imgs">
-								<a href="single_services.html"></a>
-								<img src="assets/images/products/products/b3.jpg" alt="img" class="cover-image">
-							</div>
-							<div class="item-card7-overlaytext">
-								<a href="single_category.html" class="text-white"> Beauty & Spa </a>
-								<h4  class="mb-0">₹ 398.99</h4>
-							</div>
-							<div class="card-body">
-								<div class="item-card7-desc">
-									<div class="item-card7-text">
-										<a href="single_services.html" class="text-dark"><h4 class="">Sondarya Beauty & Spa</h4></a>
-									</div>
-									<ul class="item-cards7-ic mb-0">
-										<li>
-											<a href="#">
-												<span class="text-muted">
-													<i class="icon icon-eye mr-1"></i> 
-													22 Hired
-												</span>
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-location-pin text-muted mr-1"></i> Kolkata
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-event text-muted mr-1"></i> 
-												5 hours ago
-											</a>
-										</li>
-										<li>
-											<a href="#!" class="icons">
-												<i class="icon icon-phone text-muted mr-1"></i> 
-												7645 245 153
-											</a>
-										</li>
-									</ul>
-
-									<a href="#" class="btn btn-block btn-primary mb-0 mt-4">Order Now</a>
-								</div>
-							</div>
-						</div>
-					</div>
+                       @endforeach
+                       @endif
 				</div>
 			</div>
 		</section>
-		<!--/Web Solution-->
 		@endforeach
 		@endif
 

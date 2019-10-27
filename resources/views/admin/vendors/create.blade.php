@@ -83,7 +83,7 @@
 														<label class="form-label">Date Of Birth</label>
 													</div>
 													<div class="col-md-9">
-														<input type="text" name="dob" class="form-control" data-inputmask="'mask': '99/99/9999'" placeholder="Enter DOB">
+														<input type="date" name="dob" class="form-control">
 														<span class="form-control-feedback right" aria-hidden="true"></span>
 													</div>
 												</div>
@@ -117,7 +117,7 @@
 														<label class="form-label">Id Proof</label>
 													</div>
 													<div class="col-md-9">
-														<input type="file" class="form-control" name="id_proof">
+														<input type="file" class="form-control" name="id_proof" multiple>
 													</div>
 												</div>
 											</div>
@@ -129,7 +129,7 @@
 														<label class="form-label">Date Of Joining</label>
 													</div>
 													<div class="col-md-9">
-														<input type="text" name="doj" class="form-control" data-inputmask="'mask': '99/99/9999'" placeholder="Enter DOB">
+														<input type="date" name="doj" class="form-control">
 														<span class="form-control-feedback right" aria-hidden="true"></span>
 													</div>
 												</div>
@@ -141,13 +141,13 @@
 														<label class="form-label">Department</label>
 													</div>
 													<div class="col-md-9">
-														<select name="department_name_user" class="form-control select2" data-placeholder="Choose Browser" multiple>
-															<option value="Electrical">
-																Electrical
-															</option>
-															<option value="Web Solution selected">
-																Web Solution
-															</option>
+														<select name="department_name_user[]" class="form-control select2" multiple>
+															<option>Choose</option>
+						 							@if(count($Department) > 0)
+                                                    @foreach($Department as $Departments)
+																<option value="{{$Departments->id}}">{{$Departments->department_name}}</option>
+											      	@endforeach
+                                                    @endif
 														</select>
 													</div>
 												</div>
@@ -161,8 +161,23 @@
 													<div class="col-md-9">
 														<select class="form-control" name="priority">
 															<option selected>Select Priority</option>
-															<option value="account">Single</option>
-															<option value="manager">Team</option>
+															<option value="Royale">Royale</option>
+															<option value="Royale">Normal</option>
+														</select>
+													</div>
+												</div>
+											</div>
+ 
+											<div class="form-group ">
+												<div class="row">
+													<div class="col-md-3">
+														<label class="form-label">Strength</label>
+													</div>
+													<div class="col-md-9">
+														<select class="form-control" name="strength">
+															<option selected>Select Strength</option>
+															<option value="Single">Single</option>
+															<option value="Team">Team</option>
 														</select>
 													</div>
 												</div>
@@ -175,12 +190,12 @@
 													</div>
 													<div class="col-md-9">
 														<select name="branch[]" class="form-control select2" data-placeholder="Choose Browser" multiple>
-															<option value="Firefox">
-																Branch 1
-															</option>
-															<option value="Chrome selected">
-																Branch 2
-															</option>
+															<option>Choose</option>
+						 							@if(count($Branch) > 0)
+                                                    @foreach($Branch as $Branchs)
+				 												<option value="{{$Branchs->id}}">{{$Branchs->name}}</option>
+											      	@endforeach
+                                                    @endif
 														</select>
 													</div>
 												</div>
@@ -204,11 +219,16 @@
 													</div>
 													<div class="col-md-9">
 														<div class="input-group">
-															<div class="input-group-prepend">
-																<div class="input-group-text">
-																	<i class="fa fa-calendar tx-16 lh-0 op-6"></i>
-																</div>
-															</div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text" name="working_days">
+															<select class="form-control" name="working_days" id="working_days">
+																<option>Choose</option>
+																<option value="Monday">Monday</option>
+																<option value="Tuesday">Tuesday</option>
+																<option value="Wednesday">Wednesday</option>
+																<option value="Thursday">Thursday</option>
+																<option value="Friday">Friday</option>
+																<option value="Saturday">Saturday</option>
+																<option value="Sunday">Sunday</option>
+															</select>
 														</div>
 													</div>
 												</div>
@@ -291,7 +311,7 @@
 														<label class="form-label">Phone Number</label>
 													</div>
 													<div class="col-md-9">
-														<input type="text" name="phone_number" class="form-control" data-inputmask="'mask' : '(999) 999-9999'" placeholder="Enter Phone Number">
+														<input type="text" name="phone_number" class="form-control">
 														<span class=" form-control-feedback right" aria-hidden="true"></span>
 													</div>
 												</div>
